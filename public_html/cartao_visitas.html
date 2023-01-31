@@ -1,133 +1,63 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartão de Visitas</title>
+<main id="cartao" >
 
-    <!-- importações de CSS de terceiros -->
-    <link rel="stylesheet" href="../vendor/line_awesome/css/line-awesome.min.css">
-
-    <!-- Seu CSS Externo - mais fraco - mais usado -->
-    <!-- /* <link rel="stylesheet" href="./css/devapp.css"> */ -->
-
-    <!-- Seu CSS Interno -->
-    <style type="text/css">
-
-        :root
-        {
-            --tamanhoFonte:16px;
-            --corFundo: white;
-        }
-        /* CSS Interno - apenas desta página - mais forte que o externo e mais fraca que o inline */
-
-        *
-        {
-            /* *- regra do reset - all - tudo */
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            box-sizing: border-box;
-        }
-
-        html,
-        body
-        {
-            height: 100%;
-        }
-
-        body
-        {
-            background: var(--corFundo);
-            font-size: var(--tamanhoFonte);
-        }
-
-        main,
-        section,
-        header,
-        footer
-        {
-            width: calc (100vw - 20px);
-            padding: 10px;
-            display: block;
-            overflow: hidden;
-        }
-
-        h1,
-        h2,
-        p,
-        li,
-        a
-        {
-            width: 100%;
-            font-size: 1.2rem;
-            line-height: 150%;
-        }
-        
-    
-    </style>
-</head>
-
-    <main>
-
-        <header>
-
-            <figure>
-                <img src="./imagens/dev.png" alt="logo da empresa" title="CLique para voltar para à home do site">
-            
-
-            <figcaption>
-                Logo da DevApp
-            </figcaption>
-        </figure>
-
-        <nav>
-            <a href="https://www.instagram.com/gabs_almeida0">
-                <i class="lab la-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/gabriel.silva2007">
-                <i class="lab la-facebook-f"></i>
-            </a>
-            <a href="https://br.linkedin.com/">
-                <i class="lab la-linkedin"></i>
-            </a>
-            <a href="javascript:;">
-                <i class="las la-bars"></i> Menu
-            </a>
-        </nav>
-
-        </header>
-
-        <section>
-        <h1>
-            Gabriel Almeida
-        </h1>
-
-        <h2>
-            <strong>Cargo:</strong> Dev Web
-        </h2>
-
-        <div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam officiis aliquam laudantium a ipsum ipsam, cum hic dolorem error, sed, minima corporis unde. Harum ab perferendis quidem quis consequatur dolore!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius excepturi assumenda facilis inventore dolor reprehenderit maiores nobis eos et voluptas. Voluptas sint quia suscipit accusamus culpa. Veniam quam dolorem distinctio?</p>
-        </div>
+    <header>
 
         <figure>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Link_pra_pagina_principal_da_Wikipedia-PT_em_codigo_QR_b.svg/800px-Link_pra_pagina_principal_da_Wikipedia-PT_em_codigo_QR_b.svg.png" alt="QrCode">
-        </figure>
-
-        </section>
+            <img src="./public_html/imagens/dev.png" alt="logo da empresa" title="CLique para voltar para à home do site">
         
-        <footer>
 
-            <p>
-                
-                2023 <sup><small> &copy; </small></sup> - Todos os Direitos Reservados
-            </p>
+        <figcaption>
+            Logo da DevApp
+        </figcaption>
+    </figure>
 
-        </footer>
-    </main>
+    <nav>
+        <a href="https://www.instagram.com/gabs_almeida0">
+            <i class="lab la-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/gabriel.silva2007">
+            <i class="lab la-facebook-f"></i>
+        </a>
+        <a href="https://br.linkedin.com/">
+            <i class="lab la-linkedin"></i>
+        </a>
+        <a href="javascript:;">
+            <i class="las la-phone-square-alt"></i>
+        </a>
+
+        <a href="javascript:;">
+            <i class="las la-share-alt-square"></i>
+        </a>
+    </nav>
+
+    </header>
+
+    <section>
+    <h1>
+        Gabriel Almeida
+    </h1>
+
+    <h2>
+        <strong>Cargo:</strong> Dev Web
+    </h2>
+
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam officiis aliquam laudantium a ipsum ipsam, cum hic dolorem error, sed, minima corporis unde. Harum ab perferendis quidem quis consequatur dolore!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius excepturi assumenda facilis inventore dolor reprehenderit maiores nobis eos et voluptas. Voluptas sint quia suscipit accusamus culpa. Veniam quam dolorem distinctio?</p>
+    </div>
+
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Link_pra_pagina_principal_da_Wikipedia-PT_em_codigo_QR_b.svg/800px-Link_pra_pagina_principal_da_Wikipedia-PT_em_codigo_QR_b.svg.png" alt="QrCode">
+    </figure>
+
+    </section>
     
-</body>
-</html>
+    <footer>
+
+        <p>
+            
+            2023 <sup><small> &copy; </small></sup> - Todos os Direitos Reservados
+        </p>
+
+    </footer>
+</main>

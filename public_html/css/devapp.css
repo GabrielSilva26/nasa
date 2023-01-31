@@ -1,8 +1,62 @@
 /* ------------------------------------
 Folha de Estilos do DevApp
 ---------------------------------------*/
+:root
+    {
+        --tamanhoFonte:16px;
+        --corFundo: white;
+    }
+    /* CSS Interno - apenas desta página - mais forte que o externo e mais fraca que o inline */
 
-body
+    *
+    {
+        /* *- regra do reset - all - tudo */
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    html,
+    body
+    {
+        height: 100%;
+    }
+
+    body
+    {
+        background: var(--corFundo);
+        font-size: var(--tamanhoFonte);
+    }
+
+    main,
+    section,
+    header,
+    footer
+    {
+        width: calc (100vw - 20px);
+        padding: 10px;
+        display: block;
+        overflow: hidden;
+    }
+
+    h1,
+    h2,
+    p,
+    li,
+    a
+    {
+        width: 100%;
+        font-size: 1.2rem;
+        line-height: 150%;
+    }
+/* ------------------------------------
+    Formatação da index.html
+---------------------------------------*/
+
+#tela
 {
- background: rgb(4, 21, 248);
+    width: 98vw;
+    height: 80vh;
+    background: #ddd;
 }
