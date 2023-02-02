@@ -1,0 +1,147 @@
+/* ------------------------------------
+Folha de Estilos do DevApp
+---------------------------------------*/
+:root
+    {
+        --tamanhoFonte:16px;
+        --corFundo: white;
+    }
+    /* CSS Interno - apenas desta página - mais forte que o externo e mais fraca que o inline */
+
+    *
+    {
+        /* *- regra do reset - all - tudo */
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    html,
+    body
+    {
+        height: 100%;
+    }
+
+    body
+    {
+        background: var(--corFundo);
+        font-size: var(--tamanhoFonte);
+    }
+
+    main,
+    section,
+    header,
+    footer
+    {
+        width: calc (100vw - 20px);
+        padding: 10px;
+        display: block;
+        overflow: hidden;
+    }
+
+    h1,
+    h2,
+    p,
+    li,
+    a
+    {
+        width: 100%;
+        font-size: 1.2rem;
+        line-height: 150%;
+    }
+
+    /* deixando as img responsivas */
+    img
+    {width: 100%;
+        ;}
+/* ------------------------------------
+    Formatação da index.html
+---------------------------------------*/
+
+#tela
+{
+    width: 98vw;
+    height: 80vh;;
+}
+
+/* ------------------------------------
+    Formatação da cartao_visitas.html
+---------------------------------------*/
+
+#cartao
+{
+    width: 100vw;
+    height: 100vh;
+
+    /*
+    background-color: #eee;
+    background-image: url(../../public_html/imagens/fundo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    */
+
+    background: #eee url(../../public_html/imagens/fundo.jpg) no-repeat center top;
+    background-size: 100%; /* cover 100% 20px */
+}
+
+    #cartao header figure
+    {
+        width: 50vw;
+        height: 50vw;
+        background: rgb(129, 6, 6);
+        border-radius: 60vw;
+        overflow: hidden;
+        margin: 16vh auto 1rem auto; /* 10px (top/bottom) 20px(right/left) - margin: top right bottom left - 1rem equivale ao tamanho da fonte padrão do body do navegador*/
+        border: solid 0.35rem rgba(255, 255, 255, 1); /* solid dashed double  */
+        box-shadow: 5px 0px 0 rgba(246, 138, 10, 1),
+                    5px 0 10px rgba(0, 0, 0, 0.8); /* inter/ext distHor distVert desfoque cor */
+        position: relative;
+        z-index: 20;
+
+
+    }
+
+    #cartao nav
+    {
+        width: 100%;
+        height: 22vw;
+        background: #ededed;
+        position: absolute; /* relative é na ordem natural de carregamento / remove do fluxo do documento e se posiciona independentemente - rola com o conteúdo*/ 
+        top: 33vh; /*bottom */
+        left: 0; /*right */
+        z-index: 10; /* controla o empilhamento do elemento */
+        border-radius: 15px 15px 0 0; /* esqCima dirCima dirBaixo esqBaixo*/
+        box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+
+        display: flex;
+        flex-direction: row; /* row row-reverse column column-reverse*/
+        flex-wrap: nowrap; /* impede a quebra dos itens */
+        justify-content: space-evenly; /* ajusta o espaçamento entre os itens */
+        align-items: flex-end; /* posicina na base do elemento pai */
+    }
+
+    #cartao nav a
+    {
+        /*
+            no html existem tags:
+            - bloco - ficam uma embaixo da outra. (p, h1, figure, etc)
+
+                 - inline - ficam um ao lado do outro sem abrir novas linhas. ( a, img, etc)
+
+        */
+        color: #000;
+        font-size: 2em; /* 1em é o tamanho da fonte do elemento pai (elemento que este está dentro) */
+        width: 40px;    
+        height: 40px;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    #cartao section
+    {
+        background: red;
+        position: relative;
+        z-index: 30;
+        margin-top: 5vh;
+    }
