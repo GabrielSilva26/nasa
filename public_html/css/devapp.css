@@ -1,6 +1,20 @@
 /* ------------------------------------
 Folha de Estilos do DevApp
 ---------------------------------------*/
+
+/* Podemos carregar fontes .ttf (win) .otf (win + mac + linux ) .woff .woff2 (web) */
+@font-face 
+{
+    font-family: titulos;
+    src: url(../../vendor/fontes/SourceSansPro-Bold.ttf);
+}
+
+@font-face 
+{
+    font-family: textos;
+    src: url(../../vendor/fontes/Quicksand-Regular.ttf);
+}
+
 :root
     {
         --tamanhoFonte:16px;
@@ -27,34 +41,25 @@ Folha de Estilos do DevApp
     {
         background: var(--corFundo);
         font-size: var(--tamanhoFonte);
+        font-family: textos;
     }
 
-    main,
-    section,
-    header,
-    footer
-    {
+    main, section, header, footer{
         width: calc (100vw - 20px);
         padding: 10px;
         display: block;
         overflow: hidden;
     }
 
-    h1,
-    h2,
-    p,
-    li,
-    a
-    {
-        width: 100%;
-        font-size: 1.2rem;
+    h1, h2, p, li, a{
+        font-size: 1.1rem;
         line-height: 150%;
     }
 
     /* deixando as img responsivas */
-    img
-    {width: 100%;
-        ;}
+    img{
+        width: 100%;
+    }
 /* ------------------------------------
     Formatação da index.html
 ---------------------------------------*/
@@ -62,7 +67,7 @@ Folha de Estilos do DevApp
 #tela
 {
     width: 98vw;
-    height: 80vh;;
+    height: 80vh;
 }
 
 /* ------------------------------------
@@ -102,10 +107,10 @@ Folha de Estilos do DevApp
 
     }
 
-    #cartao nav
+    #cartao header nav
     {
-        width: 100%;
-        height: 22vw;
+        width: 100vw;
+        height: 22vh;
         background: #ededed;
         position: absolute; /* relative é na ordem natural de carregamento / remove do fluxo do documento e se posiciona independentemente - rola com o conteúdo*/ 
         top: 33vh; /*bottom */
@@ -140,8 +145,63 @@ Folha de Estilos do DevApp
 
     #cartao section
     {
-        background: red;
         position: relative;
         z-index: 30;
-        margin-top: 5vh;
+        margin-top: 1.5vh;
+    }   
+
+    #cartao section h1,
+    #cartao section h2
+    {
+        font-size: 2rem;
+        text-align: center;
+        margin: 10px 0;
+        font-family: titulos;
     }
+
+    #cartao section h2
+    {
+        font-size: 1.2rem;
+    }
+
+    #cartao div
+    {
+        width: 49%;
+        height: 29vh;
+        float: left;
+        overflow-y: auto;
+        }
+
+    #cartao section figure 
+    {
+        width: 49%;
+        float: right;
+    }
+
+    #cartao footer
+    {
+        background: #333;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        color: #fff;
+        width: 100vw;
+    }
+
+    /* ------------------------------------
+        Responsividade
+    ---------------------------------------*/
+    @media (min-width: 576px)
+{    
+    body
+    {
+        background: url(../imagens/404.jpg) no-repeat center center;
+    }
+
+    body > *
+    {
+        display: none;
+    }
+}
+
+/* O signficado de > é filho direto */
