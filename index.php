@@ -33,7 +33,7 @@
 
     /* Chamadas do Banner */
     $imagens = array (
-      "https://via.placeholder.com/1920x1080.png?text=Banner+01",
+      "https://picsum.photos/1920/1080",
       "https://via.placeholder.com/1920x1080.png?text=Banner+02",
       "https://via.placeholder.com/1920x1080.png?text=Banner+03"
     );
@@ -92,7 +92,7 @@
 
     <a href="?pagina=briefing">Briefing ONG</a>
 
-    <a href="#">  <i class="las la-lock"></i> Painel</a>
+    <a href="./painel.php">  <i class="las la-lock"></i> Painel</a>
     </nav>
 
     <section id="banner">
@@ -101,10 +101,13 @@
       <div class="carousel-indicators">
 
       <?php 
+
+          $indice = 0;
+
           foreach($imagens as $item)
           {
             ?>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?php echo $indice; ?>" class="<?php echo $indice == 0 ? "active" : ""; ?>" aria-current="true" aria-label="Slide 1"> <?php echo $indice; $indice++; ?></button>
       
 
       <?php } ?>
@@ -118,16 +121,17 @@
           
       // conta os itens dentro do array
       $qtadeImg = count($imagens);
-      foreach ($imagens as $item) {
+     
 
         // variável de índice
         $i = 0;
 
         // 3 > 0
         while($qtadeImg > $i)
+        {
         ?>
 
-        <div class="carousel-item active">
+        <div class="carousel-item <?php echo $i == 0 ? "active" : ""; ?>">
           <img src="<?php echo $imagens[ $i ]; ?>" class="d-block w-100" alt="<?php echo $alt [$i]; ?>">
           <div class="carousel-caption d-none d-md-block">
             <h5><?php echo $tituloImg [$i]; ?></h5>
