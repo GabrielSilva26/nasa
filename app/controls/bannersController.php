@@ -54,7 +54,12 @@
         // instanciamos ou criamos um objeto
         $sobeArquivo = new upload( $_FILES['banner01'] );
 
+        var_dump($sobeArquivo);
+
         // 2° CRUD no BD
+        require_once("../models/DB.class.php");
+
+        $db = new DB();
     }
 
 ?>
