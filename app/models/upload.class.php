@@ -96,7 +96,7 @@
         }
             private function ChecaPasta()
             {
-                if ( !is_dir($this->diretorio) );
+                if ( !is_dir($this->diretorio) )
                 {
                     mkdir( $this->diretorio, "0777");
                 }

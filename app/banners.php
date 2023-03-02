@@ -17,7 +17,7 @@
 
   <div class="col-md-6 m-md-3">
     <label class="d-none" for="banner01" class="form-label">Banner 01</label>
-    <input class="form-control form-control-lg" id="banner01" name="banner01" type="file">
+    <input class="form-control form-control-lg" id="banner01" name="banner01" type="file" accept="image/png, image/jpg, image/gif, image/jpeg">
   </div>
 </div>
 

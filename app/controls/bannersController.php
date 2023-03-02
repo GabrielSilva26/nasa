@@ -44,7 +44,7 @@
 
     // A controller faz a chamada para o Model
     if ( !empty($_FILES['banner01'] ) && $_FILES ['banner01'] ['tmp_name'] != "" )
-    {
+{
         // chamar o Model
         // 1° Upload de Imagem
 
@@ -57,9 +57,17 @@
         var_dump($sobeArquivo);
 
         // 2° CRUD no BD
+        if( $sobeArquivo )
+    {
         require_once("../models/DB.class.php");
 
-        $db = new DB();
+        $db = new DB($host, $banco, $usuario, $senha);
+
+        if( !$db->insereDados("banners") );
+        {
+            echo "Problema ao cadastrar o banner";
+        }
     }
+}
 
 ?>
