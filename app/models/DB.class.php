@@ -37,12 +37,24 @@ class DB
         $this->conn = $conexao;
     }
 
-    public function insereDados($tabela):bool
+    /**
+     * Roda o SQL nas tabelas protegendo com SQL Injection
+     *
+     * @param [string] $SQL - SQL a ser executado
+     * @param [array] $array - um item para cada ? enviada
+     * @return boolean
+     */
+    public function rodaSQL($SQL, $array):bool
     {
-        $SQL = "INSERT INTO ".$tabela." ( banner ) VALUES ('banner01')";
-        
         // rodamos o comando sql através da conexão
-        $this->conn->execute( $SQL );
+        // query () executa sem nenhuma proteção
+        // execute() - protege de injeção de SQL usando os prepared statements (parâmetros preparados) -> prepare()
+        $insere = $this->conn->prepare( $SQL );
+
+        var_dump($insere->execute( $array )) ;
+
+        // Operador Ternário
+        return $insere == true ? true: false;
     }
 
 // procura no banco

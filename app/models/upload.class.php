@@ -14,7 +14,7 @@
         // permite alterar no objeto esse limite
         public $limite = 2000000; // (Kbytes)
         public $tiposPermitidos = array("jpg", "jpeg", "gif", "png");
-        private $nome;
+        public $nome;
 
 
         /**

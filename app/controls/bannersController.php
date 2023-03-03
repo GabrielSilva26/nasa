@@ -60,12 +60,20 @@
         if( $sobeArquivo )
     {
         require_once("../models/DB.class.php");
-
+        // objeto do banco de dados
         $db = new DB($host, $banco, $usuario, $senha);
 
-        if( !$db->insereDados("banners") );
+        $SQL = "INSERT INTO banners (banner) VALUES ( ? )";
+
+        $array = array(
+            $sobeArquivo->nome
+        );
+        // insere o banner no banco de dados
+        $cadastro = $db->rodaSQL( $SQL, $array );
+
+        if($cadastro == false)
         {
-            echo "Problema ao cadastrar o banner";
+            echo "Erro ao inserir no banco de dados";
         }
     }
 }
