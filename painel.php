@@ -10,6 +10,11 @@
         case "1":
         $arquivo = "./app/banners.php";
         break;
+
+        case "2":
+        $arquivo = "./app/cadastra.php";
+        break;
+
      }
     }
 ?>
@@ -45,7 +50,9 @@
     
     <nav class="bg-dark col-12 col-md-2 p-4 p-md-2">
         
-        <a class="text-light text-decoration-none col-md-12 d-block p-md-3" href="?op=1"> <i class="bi bi-images"> </i> Banners </a>
+        <a class="text-light text-decoration-none col-md-12 d-block p-md-3 mt-md-2" href="?op=1"> <i class="bi bi-images"> </i> Banners </a>
+
+        <a class="text-light text-decoration-none col-md-12 d-block p-md-3 mt-md-2" href="?op=2"> <i class="bi bi-people-fill"></i> </i> Registro </a>
     </nav>
 
     <section class=" col-12 col-md-10 p-md-5">

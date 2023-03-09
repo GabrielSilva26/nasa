@@ -7,7 +7,7 @@
 
   <div class="form-floating mb-3 col-md-6 m-md-3">
     <input type="text" class="form-control" id="titulo" name="Título" placeholder="Título da Imagem" maxlength="77" minlength="20" required>
-    <label for="titulo">Título Banner 01</label>
+    <label for="titulo" class="ps-md-4">Título Banner 01</label>
   </div>
 
   <div class="form-floating col-md-4 m-md-3">
