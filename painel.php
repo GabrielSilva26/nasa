@@ -14,7 +14,46 @@
         case "2":
         $arquivo = "./app/cadastra.php";
         break;
+     }
 
+     if( isset( $_GET['erro'] ) )
+     {
+        $textoMensagem = [" Erro:", "Problema ao realizar a operação."];
+
+        // Mostramos a mensagem usando JS
+        echo '<script defer >
+        // só disparar ao carregar todo o HTML
+        document.addEventListener("DOMContentLoaded", function(e)
+        {
+        document.querySelector(".alert").setAttribute("class", "alert alert-danger alert-dismissible fade show");
+
+        // permanece aberto por 3s
+        setTimeout(function(){
+
+          document.querySelector(".alert").setAttribute("class", "alert alert-danger alert-dismissible fade hide");
+        },3000);
+      });
+        </script>';
+     }
+
+     if( isset( $_GET['ok'] ) )
+     {
+        $textoMensagem = [" OK!:", "Operação realizada com sucesso."];
+
+        // Mostramos a mensagem usando JS
+        echo '<script defer >
+        // só disparar ao carregar todo o HTML
+        document.addEventListener("DOMContentLoaded", function(e)
+        {
+        document.querySelector(".alert").setAttribute("class", "alert alert-success alert-dismissible fade show");
+
+        // permanece aberto por 3s
+        setTimeout(function(){
+
+          document.querySelector(".alert").setAttribute("class", "alert alert-success alert-dismissible fade hide");
+        },3000);
+      });
+        </script>';
      }
     }
 ?>
@@ -34,6 +73,8 @@
 
     <script src="./vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js" defer> </script>
 
+    <script src="./vendor/vanilla-masker.js" defer ></script>
+
     <style type="text/css">
 
     main
@@ -45,6 +86,11 @@
     </style>
 </head>
 <body>
+
+<div class="alert alert-danger alert-dismissible fade hide" role="alert" style="position:fixed; top: 0; left:0; width: 100vw; text-align: center; ">
+  <strong><?php echo @$textoMensagem[0]; ?> </strong> <?php echo @$textoMensagem[1]; ?>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
  <main class="d-flex bg-light">
     

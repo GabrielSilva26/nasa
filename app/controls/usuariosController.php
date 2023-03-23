@@ -12,13 +12,14 @@
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
-    $usuario = $_POST['usuario'];
-    $senha = $_POST['senha'];
+    $user = $_POST['usuario'];
+    $pass = $_POST['senha'];
     $endereco = $_POST['endereco'];
     $numero = $_POST['numero'];
     $cep = $_POST['cep'];
     $complemento = $_POST['complemento'];
     $bairro = $_POST['bairro'];
+    $cpf = $_POST['CPF'];
 
     // cadastrar no BD
     require_once("../models/DB.class.php");
@@ -30,14 +31,23 @@
         $nome, 
         $sobrenome, 
         $email, 
-        $senha, 
+        $pass, 
         $cpf, 
-        $usuario
+        $user
     );
 
-    if(!$insereUsuario -> rodaSQL( $SQL, $valores ));
+    $executa = $insereUsuario -> rodaSQL( $SQL, $valores );
+
+    if( $executa == false )
     {
-        echo "Problema ao realizar o cadastro.";
+        //echo '<script> location.href="painel.php?op=2"&erro; </script> ';
+        
+        // redirecionando com PHP
+        header("Location: ../../painel.php?op=2&erro");
+    }
+    else
+    {
+        header("Location: ../../painel.php?op=2&ok");
     }
 
     // dar uma mensagem do usuário
