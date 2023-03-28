@@ -19,7 +19,7 @@
     $cep = $_POST['cep'];
     $complemento = $_POST['complemento'];
     $bairro = $_POST['bairro'];
-    $cpf = $_POST['CPF'];
+    $cpf = $_POST['cpf'];
 
     // cadastrar no BD
     require_once("../models/DB.class.php");
@@ -36,20 +36,40 @@
         $user
     );
 
-    $executa = $insereUsuario -> rodaSQL( $SQL, $valores );
-
-    if( $executa == false )
+    if( $insereUsuario -> rodaSQL( $SQL, $valores ) == false )
     {
         //echo '<script> location.href="painel.php?op=2"&erro; </script> ';
         
         // redirecionando com PHP
-        header("Location: ../../painel.php?op=2&erro");
+       // header("Location: ../../painel.php?op=2&erro");
     }
     else
     {
+
+    $ultimo = $insereUsuario->pegaUltimo();
+
+    $SQL2 = "INSERT INTO enderecos (endereco, numero, cep, complemento, bairro, usuarios_id_usuario ) VALUES (?, ?, ?, ?, ?, ?)";
+
+    $array2 = array(
+        $_POST['endereco'],
+        $_POST['numero'],
+        $_POST['cep'],
+        $_POST['complemento'],
+        $_POST['bairro'],
+        $ultimo[0]['LAST_INSERT_ID()']
+    );
+
+    var_dump($array2);
+
+    if($insereUsuario->rodaSQL($SQL2, $array2) == true )
+    {
         header("Location: ../../painel.php?op=2&ok");
     }
-
+    else
+    {
+        header("Location: ../../painel.php?op=2&erro");
+    }
+}
     // dar uma mensagem do usuário
 
 ?>

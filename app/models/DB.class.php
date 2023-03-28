@@ -56,7 +56,7 @@ class DB
         $dados=$insere->execute($array);
 
         // Operador Ternário
-        return $dados == true ? true: false;    
+        return $dados == true ? true : false;    
     }
 
     // procura no banco
@@ -68,16 +68,40 @@ class DB
 
         // virão muitos dados 
         // o comando fetchAll() converte os dados para um objeto
-        $roda->fetchAll(PDO::FETCH_OBJ);
+        $resultado = $roda->fetchAll(PDO::FETCH_OBJ);
 
-        return $roda;
+        return $resultado;
     }
 
+    public function apaga($SQL, $array):bool
+    {
+        $roda = $this->conn->prepare($SQL);
 
+        if($roda -> execute($array) == true)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    } 
 
-// atualiza no banco
+    public function pegaUltimo():array
+    {
+        
+        $SQL = "SELECT LAST_INSERT_ID()";
+        // chamar o método de busca
+        $roda = $this->conn->prepare( $SQL );
 
-// apaga no banco
+        $roda->execute( array() );
+
+        // retirando os dados em uma array
+        $res = $roda->fetchAll(PDO::FETCH_ASSOC);
+
+        return $res;
+        
+    }
 
 }
 ?>
