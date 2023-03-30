@@ -102,6 +102,28 @@ class DB
         return $res;
         
     }
+    public function criptografaDados( $texto ):string
+    {
+        // md5( $texto ) - criptografa em md5 hash (não descriptografa)
+        // base64_encode( $texto ) - criptografa em base64 e pode ser descriptografado facilmente (base64_decode ($texto))
+        // crypt ($texto, $chave) - criptografa usando uma chave personalizada / compara usando crypt ($texto, $chave) == textoNoBancoDeDados 
 
+        // openssl é o modo mais novo e mais seguro
+
+        //return md5($texto); //existem muitos dicionários de senhas / valorDoBD == md5("$_POST['senha'])
+        //return base64_encode($texto); / base64_decode(valorDoBD) == ("$_POST['senha'])
+
+        //return crypt($texto, '$en@c'); // não permite descriptografar a senha / crypt ("$_POST['senha']), '$en@c == valorDoBD
+
+        $cipher = "aes-128-gcm"; // tamanho do hash
+        $iv = openssl_cipher_iv_length($cipher); // string aleatória para a chave pública
+        $ivRandom = openssl_random_pseudo_bytes($iv);
+
+        $chave = '$en@c';
+
+        $textoCriptografado = openssl_encrypt($texto, $cipher, $chave, $options=0 , $iv, $ivRandom);
+
+        return $textoCriptografado;
+    }
 }
 ?>

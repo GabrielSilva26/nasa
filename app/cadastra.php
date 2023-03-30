@@ -7,7 +7,7 @@
     if (isset($_GET['editar'] ) )
     {
         $SQL = "UPDATE usuarios SET nome = ?, sobrenome = ?, cpf = ?, email = ?, usuario = ? = ? WHERE id_usuario = ?";
-        $SQL2 = "UPDATE usuarios SET endereco = ?, numero = ?, cep = ?, complemento = ?, bairro = ? WHERE usuarios_id_usuario = ?";
+        $SQL2 = "UPDATE enderecos SET endereco = ?, numero = ?, cep = ?, complemento = ?, bairro = ? WHERE usuarios_id_usuario = ?";
 
         $array = array(
             $_POST['nome'],
