@@ -1,12 +1,13 @@
 <?php
 
-/*
-    Configurações do sistema
-*/
+/* Configurações do sistema */
 
-    define("CAMINHO", "http://localhost/devapp/"); // define uma constante
+define("CAMINHO", "http://localhost/nasa/"); // Definimos a constante
 
-    $host="localhost";
-    $banco="devappt92";
-    $usuario="root";
-    $senha="";
+$host="localhost";
+$banco="nasa";
+$usuario="root";
+$senha ="";
+
+
+?>

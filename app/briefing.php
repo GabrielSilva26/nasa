@@ -1,4 +1,4 @@
-<main class="container-fluid">
+<main class="container-fluid" >
 
     <h1>
         Briefing da ONG

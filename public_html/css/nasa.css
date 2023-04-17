@@ -1,0 +1,203 @@
+/*----------------------------------------- 
+    Folha de Estilos da ONG NASA
+-----------------------------------------*/
+/*Tipos de arquivos que podem ser carregados como fonte .ttf (win) .otf( win + mac + linux ) .woff .woff2 (web) */
+@font-face 
+{
+    font-family: titulos;
+    src: url(../../vendor/fontes/Anton-Regular.ttf);
+}
+
+@font-face 
+{
+    font-family: textos;
+    src: url(../../vendor/fontes/Quicksand-VariableFont_wght.ttf);
+}
+
+:root
+{
+    --tamanhoFonte: 16px;
+    --corFundo: white;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html,
+body
+{
+    height: 100%;
+}
+
+body
+{
+    background: var(--corFundo);
+    font-size: var(--tamanhFonte);
+    font-family: textos;
+}
+
+main,
+section,
+header,
+footer
+{
+    width: calc( 100vw - 20px );
+    padding: 10px;
+    display: block;
+    overflow: hidden;
+}
+
+h1,
+h2,
+p,
+li,
+a
+{
+    font-size: 1.1rem;
+    line-height: 150%;
+}
+
+/* IMAGENS RESPONSIVAS*/
+img
+{
+    width: 100%;
+}
+
+/*----------------------------------------- 
+    Formatação da index.html 
+-----------------------------------------*/
+
+#tela
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+/*----------------------------------------- 
+    Formatação da cartao_visitas.html 
+-----------------------------------------*/
+
+#cartao
+{
+    width: 100vw;
+    height: 100vh;
+
+    background: #eee url(../../public_html/imagens/fundo.jpg) no-repeat center top; 
+    background-size: 100%;
+}
+
+#cartao header figure
+{
+    width: 50vw;
+    height: 50vw;
+    background: rgb(138, 63, 63);
+    border-radius: 60vw;
+    overflow: hidden;
+    margin: 16vh auto 1rem auto;
+    border: solid 0.35rem rgba(255, 255, 255, 1);
+    box-shadow: 5px 0px 0px rgba(246, 138, 10, 1),
+                5px 0 10px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 20;
+}
+
+#cartao nav
+{
+    width: 100%;
+    height: 22vh;
+    background: #ededed;
+    position: absolute;
+    top: 33vh;
+    left: 0;
+    z-index: 10;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+#cartao nav a
+{
+    color:#000;
+    font-size: 2.5rem;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#cartao section
+{
+    color: #000;
+    position: relative;
+    z-index: 30;
+    margin-top: 1.5vh;
+}
+
+#cartao section h1,
+#cartao section h2
+{   
+    
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px 0;
+    font-family: titulos;
+}
+
+#cartao section h2
+{
+    font-size: 1.2rem
+}
+
+#cartao div
+{
+    width: 49%;
+    height: 29vh;
+    float: left;
+    overflow-y: auto;
+}
+
+#cartao section figure
+{
+    z-index: 10;
+    width: 49%;
+    float: right;
+}
+
+#cartao footer
+{
+    background: #000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    width: 100vw;
+}
+
+
+/*----------------------------------------- 
+    Responsividade 
+-----------------------------------------*/
+
+@media(min-width: 576px)
+{
+    body
+    {
+        background: url(../imagens/404.jpg)
+        no-repeat center center;
+    }
+
+    body > *
+    {
+        display: none;
+    }
+}
